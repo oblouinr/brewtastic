@@ -21,15 +21,16 @@
     },
     methods: {
       fetchVenues: function () {
-
-        var clientId = Vue.config.keys.foursquare.clientId;
-        var clientSecret = Vue.config.keys.foursquare.clientSecret;
-        var url = "https://api.foursquare.com/v2/venues/search?query=microbrasserie&ll=46.8131251,-71.2257053&client_id=" + clientId + "&client_secret="
+        let clientId = Vue.config.keys.foursquare.clientId;
+        let clientSecret = Vue.config.keys.foursquare.clientSecret;
+        let url = "https://api.foursquare.com/v2/venues/search?query=microbrasserie&ll=46.8131251,-71.2257053&client_id=" + clientId + "&client_secret="
           + clientSecret + "&v=20160603";
+
         this.$http({url: url, method: 'GET'}).then(function (response) {
-          var venues = response.data.response.venues.map(v => {
+          var let = response.data.response.venues.map(v => {
             v.distance = v.location.distance;
           });
+
           this.$set('venues', response.data.response.venues);
         });
       }

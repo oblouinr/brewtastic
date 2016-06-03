@@ -18,12 +18,12 @@
       },
       methods: {
         loadVenue: function () {
-
-          var clientId = Vue.config.keys.foursquare.clientId;
-          var clientSecret = Vue.config.keys.foursquare.clientSecret;
-          var venueId = this.$route.params.venueId;
-          var url = "https://api.foursquare.com/v2/venues/" + venueId + "?client_id=" + clientId + "&client_secret="
+          let clientId = Vue.config.keys.foursquare.clientId;
+          let clientSecret = Vue.config.keys.foursquare.clientSecret;
+          let venueId = this.$route.params.venueId;
+          let url = "https://api.foursquare.com/v2/venues/" + venueId + "?client_id=" + clientId + "&client_secret="
             + clientSecret + "&v=20160603";
+
           this.$http({url: url, method: 'GET'}).then(function (response) {
             this.$set('venue', response.data.response.venue);
           });
