@@ -2,16 +2,31 @@
     <div>
         <h1>{{ venue.name }}</h1>
     </div>
+    <h3>Bières</h3>
+    <ul>
+      <li v-for="beer in beers">
+        <span>{{ beer.name }} </span>
+        <button>Retirer ce fût</button>
+      </li>
+    </ul>
+
+    <beer-search v-show="searchToggled"></beer-search>
+    <button v-on:click="toggleSearch(true)">Ajouter un fût</button>
 </template>
 
 <script>
     import Vue from 'vue';
-
+    import BeerSearch from './Beer.Search.vue';
     export default {
       data () {
         return {
-          venue: {}
+          searchToggled: false,
+          venue: {},
+          beers: [{name: 'Cornik'}, {name: 'Kraken'}, {name: 'Capitaine Sauvin'}]
         }
+      },
+      components: {
+        'beer-search': BeerSearch
       },
       ready () {
         this.loadVenue();
@@ -27,6 +42,9 @@
           this.$http({url: url, method: 'GET'}).then(function (response) {
             this.$set('venue', response.data.response.venue);
           });
+        },
+        toggleSearch: function (toggle) {
+          this.$set('searchToggled', toggle);
         }
       }
     }
