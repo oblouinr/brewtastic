@@ -11,13 +11,16 @@
   export default {
     data () {
       return {
-        venues: [
-          {
-            id: 1,
-            name: 'Korrigane'
-          }
-        ]
+        venues: []
       }
+    },
+    methods: {
+      fetchVenues: function () {
+        this.$set('venues', [{name: 'Korrigane'}]);
+      }
+    },
+    ready () {
+      this.fetchVenues();
     }
   }
 </script>
