@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <venue-index></venue-index>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello.vue'
+import VenueIndex from './components/Venue.Index.vue'
 
 export default {
   components: {
-    Hello
+    VenueIndex
   }
 }
 </script>
 
 <style lang="scss">
   $foo: yellow;
+
   body {
     background: $foo;
   }
