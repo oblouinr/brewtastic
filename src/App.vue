@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header class="brand">
-      <h1 class="title">Brewtastic</h1>
+      <h1>Brewtastic</h1>
     </header>
 
     <div class="main-view">
@@ -10,5 +10,4 @@
   </div>
 </template>
 
-<style lang="scss" src="stylesheets/base.scss">
-</style>
+<style lang="scss" src="stylesheets/base.scss"></style>

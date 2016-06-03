@@ -1,13 +1,20 @@
 
 <template>
-  <div>
-    <h1>Brasseries</h1>
-    <ul>
-      <li v-for="venue in venues | orderBy 'distance'">
-        <a v-link="{ name: 'venue', params: { venueId: venue.id }}">{{ venue.name }} ({{ venue.distance }} mètres)</a>
+  <section class="venues">
+    <header>
+      <h1 class="title -main">Brasseries</h1>
+    </header>
+    <ul class="venue-list">
+      <li class="venue" v-for="venue in venues | orderBy 'distance'">
+        <a v-link="{ name: 'venue', params: { venueId: venue.id }}">
+          <div class="infos">
+            <span class="name">{{ venue.name }}</span>
+            <span class="distance">{{ venue.distance }} mètres</span>
+          </div>
+        </a>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -43,3 +50,6 @@
     }
   }
 </script>
+
+<style lang="scss" src="./../stylesheets/venue-list/venue-list.scss"></style>
+<!-- <style lang="scss" src="stylesheets/base.scss"></style> -->

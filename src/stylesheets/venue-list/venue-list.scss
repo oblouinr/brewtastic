@@ -1,0 +1,14 @@
+@import "./../stylesheets/constants/_colors.scss";
+@import "./../stylesheets/constants/_animations.scss";
+@import "./../stylesheets/venue-list/_list-item.scss";
+
+.venues {
+  header {
+    margin-bottom: 4em;
+    text-align: center;
+  }
+}
+
+.venue-list {
+  list-style-type: none;
+}

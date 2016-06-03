@@ -1,0 +1,40 @@
+.venue {
+  border-bottom: 1px solid rgba($grey, 0.1);
+  transition: border-bottom-color 250ms $cubic-anim;
+
+  &:hover,
+  &:active {
+    border-bottom-color: rgba($grey, 0.3);
+
+    .infos {
+      transform: translateX(0.75em);
+    }
+  }
+
+
+  a {
+    display: block;
+    padding: 1em;
+  }
+
+  .infos {
+    transform: translateX(0);
+    transition: transform 250ms $cubic-anim;
+  }
+
+  span {
+    display: block;
+  }
+
+  .name {
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+
+  .distance {
+    font-size: 0.875em;
+    font-weight: 900;
+    font-style: italic;
+    color: $dark-blue;
+  }
+}

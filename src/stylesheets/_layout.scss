@@ -1,12 +1,17 @@
 body {
-  padding-left: 50%;
+  padding-left: 34%;
   background: #fff;
   font-family: $avenir;
 }
 
+* {
+  box-sizing: border-box;
+  color: $grey;
+}
+
 .brand {
   height: 100%;
-  width: 50%;
+  width: 34%;
   padding: 10em 7.5em;
   background: linear-gradient(135deg, $dark-blue 0%, $blue 100%);
   position: fixed;
@@ -19,10 +24,6 @@ body {
 }
 
 .main-view {
-  padding: 10em 7.5em;
+  padding: 5em 7.5em 10em 7.5em;
 }
 
-* {
-  box-sizing: border-box;
-  color: $blue;
-}
