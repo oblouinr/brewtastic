@@ -41,6 +41,7 @@ a {
 
   &.-main {
     display: inline-block;
+    font-size: 2em;
     text-align: center;
     text-transform: uppercase;
 
@@ -48,7 +49,7 @@ a {
       content: '';
       display: block;
       background: $grey;
-      height: 3px;
+      height: 0.175em;
       width: 100%;
     }
   }
