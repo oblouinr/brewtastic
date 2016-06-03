@@ -6,6 +6,10 @@ import App from './App.vue'
 import VenueIndex from './components/Venue.Index.vue'
 import VenueSingle from './components/Venue.Single.vue'
 
+import keys from './keys'
+
+Vue.config['keys'] = keys;
+
 Vue.use(VueResource)
 Vue.use(VueRouter)
 

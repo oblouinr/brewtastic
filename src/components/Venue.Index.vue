@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   export default {
     data () {
       return {
@@ -18,6 +19,7 @@
     },
     methods: {
       fetchVenues: function () {
+        console.log(Vue.config);
         this.$set('venues', [
           {
             id: 1,
