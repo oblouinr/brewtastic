@@ -1,11 +1,10 @@
 <template>
     <a v-link="{ name: 'home'}">Retourner à l'accueil</a>
     <div>
-        <h1>{{ venue.name }}</h1>
-        <div class="description">{{  }}</div>
-        <a href="http://maps.google.ca" target="_blank" class="address">
-          {{venue.location.address}}, {{venue.location.city}}
-        </a>
+      <h1 class="venue-title">{{ venue.name }}</h1>
+      <a href="http://maps.google.ca" target="_blank" class="address">
+        {{venue.location.address}}, {{venue.location.city}}
+      </a>
     </div>
     <button class="button" v-on:click="toggleSearch(true)" v-show="!searchToggled">Ajouter un fût</button>
     <button class="button" v-show="searchToggled" v-on:click="toggleSearch(false)">Annuler</button>
@@ -13,6 +12,7 @@
     <h3>Bières</h3>
     <ul class="brew-list">
       <li class="brew-item" v-for="beer in beers">
+        <img src="{{ beer.beer.beer_label }}" alt="">
         <span class="brew-name">{{ beer.beer.beer_name }} ({{ beer.brewery.brewery_name }})</span><br>
         <span class="brew-info">ABV: {{ beer.beer.beer_abv }}, IBU: {{ beer.beer.beer_ibu }}</span>
         <p class="description">
@@ -73,9 +73,23 @@
   @import "./../stylesheets/constants/_typography.scss";
   @import "./../stylesheets/constants/_animations.scss";
 
+  .venue-title {
+    margin-bottom: 0;
+  }
+  .address {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
   .brew-item {
     padding: 1em 0;
     border-bottom: 1px solid rgba(53, 53, 54, 0.1);
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
   }
   .brew-name {
     font-size: 1.5em;
