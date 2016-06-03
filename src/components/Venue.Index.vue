@@ -3,7 +3,7 @@
     <h1>Brasseries</h1>
     <ul>
       <li v-for="venue in venues">
-        {{ venue.name }}
+        <a v-link="{ name: 'venue', params: { venueId: venue.id }}">{{ venue.name }}</a>
       </li>
     </ul>
   </div>
@@ -18,7 +18,16 @@
     },
     methods: {
       fetchVenues: function () {
-        this.$set('venues', [{name: 'Korrigane'}]);
+        this.$set('venues', [
+          {
+            id: 1,
+            name: 'Korrigane'
+          },
+          {
+            id: 2,
+            name: 'Noctem'
+          }
+        ]);
       }
     },
     ready () {

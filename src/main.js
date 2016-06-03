@@ -13,9 +13,11 @@ export var router = new VueRouter()
 
 router.map({
   '/home': {
+    name: 'home',
     component: VenueIndex
   },
-  '/venue': {
+  '/venue/:venueId': {
+    name: 'venue',
     component: VenueSingle
   }
 });
