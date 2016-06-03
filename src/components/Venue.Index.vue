@@ -3,8 +3,8 @@
   <div>
     <h1>Brasseries</h1>
     <ul>
-      <li v-for="venue in venues">
-        {{ venue.name }} ({{ venue.distance }} meters)
+      <li v-for="venue in venues | orderBy 'distance'">
+        <a v-link="{ name: 'venue', params: { venueId: venue.id }}">{{ venue.name }} ({{ venue.distance }} meters)</a>
       </li>
     </ul>
   </div>
