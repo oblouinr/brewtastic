@@ -3,6 +3,9 @@
     <div>
         <h1>{{ venue.name }}</h1>
         <div class="description">{{  }}</div>
+        <a href="http://maps.google.ca" target="_blank" class="address">
+          {{venue.location.address}}, {{venue.location.city}}
+        </a>
     </div>
     <h3>Bières</h3>
     <ul>
@@ -45,6 +48,7 @@
 
           this.$http({url: url, method: 'GET'}).then(function (response) {
             this.$set('venue', response.data.response.venue);
+            console.log(response.data.response);
           });
         },
         toggleSearch: function (toggle) {
