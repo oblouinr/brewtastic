@@ -27,7 +27,7 @@
           + clientSecret + "&v=20160603";
 
         this.$http({url: url, method: 'GET'}).then(function (response) {
-          var let = response.data.response.venues.map(v => {
+          let venues = response.data.response.venues.map(v => {
             v.distance = v.location.distance;
           });
 
