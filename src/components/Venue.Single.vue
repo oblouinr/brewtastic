@@ -1,4 +1,5 @@
 <template>
+    <a v-link="{ name: 'home'}">Retourner à l'accueil</a>
     <div>
         <h1>{{ venue.name }}</h1>
     </div>
@@ -11,7 +12,9 @@
     </ul>
 
     <beer-search v-show="searchToggled"></beer-search>
-    <button v-on:click="toggleSearch(true)">Ajouter un fût</button>
+    <button v-on:click="toggleSearch(true)" v-show="!searchToggled">Ajouter un fût</button>
+    <button v-show="searchToggled" v-on:click="toggleSearch(false)">Annuler</button>
+
 </template>
 
 <script>
