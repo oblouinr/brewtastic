@@ -1,0 +1,26 @@
+
+$avenir: "Avenir", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../../src/assets/fonts/avenir_black.eot'); /* IE9 Compat Modes */
+  src: url('../../src/assets/fonts/avenir_black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../src/assets/fonts/avenir_black.woff') format('woff'), /* Modern Browsers */
+       url('../../src/assets/fonts/avenir_black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../src/assets/fonts/avenir_black.svg#3f32b7b0e932d6bbe85d14c9bded23e3') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  900;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../../src/assets/fonts/avenir_book.eot'); /* IE9 Compat Modes */
+  src: url('../../src/assets/fonts/avenir_book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../src/assets/fonts/avenir_book.woff') format('woff'), /* Modern Browsers */
+       url('../../src/assets/fonts/avenir_book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../src/assets/fonts/avenir_book.svg#3f32b7b0e932d6bbe85d14c9bded23e3') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}

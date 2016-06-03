@@ -1,15 +1,14 @@
 <template>
-  <div class="container">
-    <router-view></router-view>
+  <div class="wrapper">
+    <header class="brand">
+      <h1 class="title">Brewtastic</h1>
+    </header>
+
+    <div class="main-view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-  $foo: yellow;
-  body {
-    background: $foo;
-  }
-  * {
-    color: aqua;
-  }
+<style lang="scss" src="stylesheets/base.scss">
 </style>

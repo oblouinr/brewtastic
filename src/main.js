@@ -6,7 +6,7 @@ import App from './App.vue'
 import VenueIndex from './components/Venue.Index.vue'
 import VenueSingle from './components/Venue.Single.vue'
 
-import keys from './keys'
+import keys from './api-keys'
 
 Vue.config['keys'] = keys;
 
