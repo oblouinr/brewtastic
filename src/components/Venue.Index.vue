@@ -2,7 +2,9 @@
   <div>
     <h1>Brasseries</h1>
     <ul>
-      <li v-for="venue in venues">{{ venue.name }}</li>
+      <li v-for="venue in venues">
+        {{ venue.name }}
+      </li>
     </ul>
   </div>
 </template>

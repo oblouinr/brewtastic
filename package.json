@@ -46,6 +46,8 @@
     "postcss": "^5.0.21",
     "proxyquireify": "^3.0.1",
     "uglify-js": "^2.5.0",
+    "vue-resource": "^0.7.2",
+    "vue-router": "^0.7.13",
     "vueify": "^8.5.2",
     "watchify": "^3.4.0"
   }

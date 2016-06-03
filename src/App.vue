@@ -1,22 +1,11 @@
 <template>
-  <div id="app">
-    <venue-index></venue-index>
+  <div class="container">
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import VenueIndex from './components/Venue.Index.vue'
-
-export default {
-  components: {
-    VenueIndex
-  }
-}
-</script>
-
 <style lang="scss">
   $foo: yellow;
-
   body {
     background: $foo;
   }
