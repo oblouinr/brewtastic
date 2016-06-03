@@ -1,11 +1,12 @@
 
 <template>
-  <div>
-    <label for="search"> Rechercher un endroit</label>
-    <input type="text" name="search" v-model="query" debounce="250" >
-    <button v-on:click="clearSearch">X</button>
-    <ul>
-      <li v-for="venue in results">
+  <div class="search">
+    <input type="text" name="search" placeholder="Rechercher un endroit" v-model="query" debounce="250" >
+    <button class="clear" v-on:click="clearSearch">
+      <span>+</span>
+    </button>
+    <ul class="results">
+      <li class="result" v-for="venue in results">
         <a v-link="{ name: 'venue', params: { venueId: venue.id }}">{{ venue.name }} ({{ venue.distance }} mètres)</a>
       </li>
     </ul>
@@ -55,3 +56,5 @@
     }
   }
 </script>
+
+<style lang="scss" src="./../stylesheets/venue-search/venue-search.scss"></style>

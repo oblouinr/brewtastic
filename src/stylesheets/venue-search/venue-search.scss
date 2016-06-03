@@ -1,0 +1,77 @@
+@import "./../stylesheets/constants/_colors.scss";
+@import "./../stylesheets/constants/_typography.scss";
+@import "./../stylesheets/constants/_animations.scss";
+
+.search {
+  margin-bottom: 6em;
+  position: relative;
+
+  input {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 1em 3em 1em 1em;
+    border: 1px solid rgba($blue, 1);
+    outline: 0;
+    font-family: $avenir;
+    font-size: 1.25em;
+    line-height: 1.5;
+    color: $grey;
+    transition: border-color 250ms $cubic-anim;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: rgba($blue, 1);
+    }
+  }
+
+  .clear {
+    background: transparent;
+    border: none;
+    font-family: $avenir;
+    position: absolute;
+    right: 1em;
+    top: 0.4em;
+    cursor: pointer;
+    outline: 0;
+
+    &:hover,
+    &:active {
+      span {
+        color: $dark-blue;
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-size: 4em;
+      color: $blue;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.results {
+  background: linear-gradient(135deg, $dark-blue 0%, $blue 100%);
+  list-style-type: none;
+  padding: 0 2em;
+  margin: 0;
+
+  .result {
+    border-top: 1px solid #fff;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 1.5em 1em;
+  }
+
+  * {
+    color: #fff;
+  }
+}
