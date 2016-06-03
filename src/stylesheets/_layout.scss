@@ -1,5 +1,7 @@
+$brand-width: 34%;
+
 body {
-  padding-left: 34%;
+  padding-left: $brand-width;
   background: #fff;
   font-family: $avenir;
 }
@@ -11,15 +13,38 @@ body {
 
 .brand {
   height: 100%;
-  width: 34%;
+  width: $brand-width;
   padding: 10em 7.5em;
-  background: linear-gradient(135deg, $dark-blue 0%, $blue 100%);
+  background-image: url(../../src/assets/img/cans_bg.jpg);
+  background-size: cover;
+  background-position: top right;
+  text-align: center;
   position: fixed;
   left: 0;
   top: 0;
 
+  .gradient {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, $dark-blue 0%, $blue 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
   * {
     color: #fff;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    z-index: 2;
+    transform: translateY(-50%);
   }
 }
 

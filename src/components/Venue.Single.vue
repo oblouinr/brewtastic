@@ -3,6 +3,9 @@
     <div>
         <h1>{{ venue.name }}</h1>
         <div class="description">{{  }}</div>
+        <a href="http://maps.google.ca" target="_blank" class="address">
+          {{venue.location.address}}, {{venue.location.city}}
+        </a>
     </div>
     <button class="button" v-on:click="toggleSearch(true)" v-show="!searchToggled">Ajouter un fût</button>
     <button class="button" v-show="searchToggled" v-on:click="toggleSearch(false)">Annuler</button>
@@ -47,7 +50,7 @@
             + clientSecret + "&v=20160603";
 
           this.$http({url: url, method: 'GET'}).then(function (response) {
-            this.venue = response.data.response.venue;
+            this.$set('venue', response.data.response.venue);
           });
 
         },

@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
     <header class="brand">
-      <h1>Brewtastic</h1>
+      <span class="gradient"></span>
+      <img src="/src/assets/img/brewtastic_light.svg" alt="" class="logo">
     </header>
 
     <div class="main-view">

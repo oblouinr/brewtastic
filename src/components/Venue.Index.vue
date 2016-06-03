@@ -58,4 +58,3 @@
 </script>
 
 <style lang="scss" src="./../stylesheets/venue-list/venue-list.scss"></style>
-<!-- <style lang="scss" src="stylesheets/base.scss"></style> -->
