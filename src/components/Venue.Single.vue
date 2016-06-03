@@ -4,17 +4,20 @@
         <h1>{{ venue.name }}</h1>
         <div class="description">{{  }}</div>
     </div>
+    <button class="button" v-on:click="toggleSearch(true)" v-show="!searchToggled">Ajouter un fût</button>
+    <button class="button" v-show="searchToggled" v-on:click="toggleSearch(false)">Annuler</button>
+    <beer-search v-if="searchToggled"></beer-search>
     <h3>Bières</h3>
-    <ul>
-      <li v-for="beer in beers">
-        <span class="beer-name">{{ beer.beer.beer_name }} ({{ beer.brewery.brewery_name }})</span>
-        <button v-on:click="removeBeer(beer)">Retirer ce fût</button>
+    <ul class="brew-list">
+      <li class="brew-item" v-for="beer in beers">
+        <span class="brew-name">{{ beer.beer.beer_name }} ({{ beer.brewery.brewery_name }})</span><br>
+        <span class="brew-info">ABV: {{ beer.beer.beer_abv }}, IBU: {{ beer.beer.beer_ibu }}</span>
+        <p class="description">
+          {{ beer.beer.beer_description }}
+        </p>
+        <button class="button" v-on:click="removeBeer(beer)">Retirer ce fût</button>
       </li>
     </ul>
-
-    <beer-search v-if="searchToggled"></beer-search>
-    <button v-on:click="toggleSearch(true)" v-show="!searchToggled">Ajouter un fût</button>
-    <button v-show="searchToggled" v-on:click="toggleSearch(false)">Annuler</button>
 </template>
 
 <script>
@@ -44,8 +47,9 @@
             + clientSecret + "&v=20160603";
 
           this.$http({url: url, method: 'GET'}).then(function (response) {
-            this.$set('venue', response.data.response.venue);
+            this.venue = response.data.response.venue;
           });
+
         },
         toggleSearch: function (toggle) {
           this.$set('searchToggled', toggle);
@@ -60,3 +64,43 @@
       }
     }
 </script>
+
+<style lang="scss">
+  @import "./../stylesheets/constants/_colors.scss";
+  @import "./../stylesheets/constants/_typography.scss";
+  @import "./../stylesheets/constants/_animations.scss";
+
+  .brew-item {
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(53, 53, 54, 0.1);
+  }
+  .brew-name {
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  .brew-info {
+    display: block;
+    font-size: 0.875em;
+    font-weight: 900;
+    font-style: italic;
+    color: #0c2c7c;
+  }
+  .brew-list {
+    list-style: none;
+    padding: 0;
+  }
+  .button {
+    font-family: $avenir;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(135deg, #325ca2 0%, #2158b4 100%);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    &:hover {
+      background: #0c2c7c;
+    }
+  }
+</style>

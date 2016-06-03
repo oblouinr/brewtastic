@@ -37,6 +37,7 @@
       chooseBeer: function(beer) {
         this.$parent.$data.beers.push(beer);
         this.$parent.$data.searchToggled = false;
+        console.log(beer);
       }
     },
     ready () {
