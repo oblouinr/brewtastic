@@ -4,6 +4,8 @@
     <header>
       <h1 class="title -main">Brasseries</h1>
     </header>
+    <venue-search></venue-search>
+    <h3>Endroits près de vous</h3>
     <ul class="venue-list">
       <li class="venue" v-for="venue in venues | orderBy 'distance'">
         <a v-link="{ name: 'venue', params: { venueId: venue.id }}">
@@ -20,11 +22,15 @@
 <script>
 
   import Vue from 'vue';
+  import VenueSearch from './Venue.Search.vue';
   export default {
     data () {
       return {
         venues: []
       }
+    },
+    components: {
+      'venue-search': VenueSearch
     },
     methods: {
       fetchVenues: function () {
