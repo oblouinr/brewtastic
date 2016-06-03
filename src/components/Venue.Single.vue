@@ -2,6 +2,7 @@
     <a v-link="{ name: 'home'}">Retourner à l'accueil</a>
     <div>
       <h1 class="venue-title">{{ venue.name }}</h1>
+      <div class="category">{{venue.categories[0].name}}</div>
       <a href="http://maps.google.ca" target="_blank" class="address">
         {{venue.location.address}}, {{venue.location.city}}
       </a>
